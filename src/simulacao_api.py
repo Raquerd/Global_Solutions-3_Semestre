@@ -2,9 +2,8 @@ import requests
 import time
 import random
 from datetime import datetime
+import os, json
 
-# URL da API local desenvolvida pelo Davi (Ajuste a porta se necessário)
-URL_API = "http://localhost:8000/api/telemetria"
 
 # Configurações do Limiar baseadas no código C++ do ESP32
 LIMIAR_FUMACA = 400
@@ -40,6 +39,36 @@ def gerar_dados_sensores():
         "nivel_fumaca": nivel_fumaca,
         "alerta_local": alerta_local
     }
+
+   ## --- PARTE NOVA: MANIPULAÇÃO DO HISTÓRICO JSON ---
+    caminho_diretorio = "C:/Users/davih/OneDrive/Documentos/PROJETOS/Fiap/ANO 2/Global Solutions 1/data"
+    caminho_arquivo = os.path.join(caminho_diretorio, "historico_telemetria.json")
+    
+    # Garante que a estrutura de pastas da FIAP exista
+    os.makedirs(caminho_diretorio, exist_ok=True)
+    
+    historico = []
+    
+    # Se o arquivo já existir, abre e carrega a lista existente
+    if os.path.exists(caminho_arquivo):
+        try:
+            with open(caminho_arquivo, "r", encoding="utf-8") as f:
+                historico = json.load(f)
+                # Garante que o conteúdo seja uma lista
+                if not isinstance(historico, list):
+                    historico = []
+        except json.JSONDecodeError:
+            # Se o arquivo estiver corrompido ou vazio, reinicia a lista
+            historico = []
+
+    # Adiciona o novo payload gerado ao fim do histórico
+    historico.append(payload)
+    
+    # Salva novamente o arquivo com os dados atualizados
+    with open(caminho_arquivo, "w", encoding="utf-8") as f:
+        json.dump(historico, f, indent=4, ensure_ascii=False)
+        
+    print(f"💾 Dado salvo no histórico local ({caminho_arquivo})")
     
     return payload, status_log
 

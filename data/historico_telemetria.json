@@ -1,0 +1,23 @@
+[
+    {
+        "data_hora": "2026-06-09 22:29:42",
+        "temperatura": 29.7,
+        "humidade": 61.1,
+        "nivel_fumaca": 249,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 22:30:01",
+        "temperatura": 39.8,
+        "humidade": 12.9,
+        "nivel_fumaca": 492,
+        "alerta_local": true
+    },
+    {
+        "data_hora": "2026-06-09 22:30:31",
+        "temperatura": 31.4,
+        "humidade": 64.4,
+        "nivel_fumaca": 201,
+        "alerta_local": false
+    }
+]
