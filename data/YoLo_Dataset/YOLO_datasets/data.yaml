@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['fire']
+
+roboflow:
+  workspace: fireforestgen
+  project: fire_forest_gen
+  version: 8
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/fireforestgen/fire_forest_gen/dataset/8
