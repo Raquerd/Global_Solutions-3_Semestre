@@ -236,5 +236,103 @@
         "humidade": 42.3,
         "nivel_fumaca": 276,
         "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:10:26",
+        "temperatura": 23.1,
+        "humidade": 58.7,
+        "nivel_fumaca": 272,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:10:35",
+        "temperatura": 29.5,
+        "humidade": 43.5,
+        "nivel_fumaca": 194,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:10:37",
+        "temperatura": 30.9,
+        "humidade": 68.6,
+        "nivel_fumaca": 205,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:11:34",
+        "temperatura": 28.5,
+        "humidade": 47.8,
+        "nivel_fumaca": 185,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:12:13",
+        "temperatura": 30.3,
+        "humidade": 64.3,
+        "nivel_fumaca": 303,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:12:15",
+        "temperatura": 46.0,
+        "humidade": 14.0,
+        "nivel_fumaca": 590,
+        "alerta_local": true
+    },
+    {
+        "data_hora": "2026-06-09 23:12:34",
+        "temperatura": 22.9,
+        "humidade": 47.4,
+        "nivel_fumaca": 154,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:12:58",
+        "temperatura": 22.4,
+        "humidade": 66.7,
+        "nivel_fumaca": 135,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:14:23",
+        "temperatura": 26.0,
+        "humidade": 57.7,
+        "nivel_fumaca": 127,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:15:23",
+        "temperatura": 23.9,
+        "humidade": 41.7,
+        "nivel_fumaca": 264,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:16:23",
+        "temperatura": 27.9,
+        "humidade": 51.7,
+        "nivel_fumaca": 266,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:17:23",
+        "temperatura": 26.2,
+        "humidade": 58.9,
+        "nivel_fumaca": 150,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:18:23",
+        "temperatura": 30.3,
+        "humidade": 58.3,
+        "nivel_fumaca": 288,
+        "alerta_local": false
+    },
+    {
+        "data_hora": "2026-06-09 23:19:25",
+        "temperatura": 47.6,
+        "humidade": 7.8,
+        "nivel_fumaca": 616,
+        "alerta_local": true
     }
 ]
