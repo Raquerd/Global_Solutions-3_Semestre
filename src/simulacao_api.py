@@ -1,0 +1,66 @@
+import requests
+import time
+import random
+from datetime import datetime
+
+# URL da API local desenvolvida pelo Davi (Ajuste a porta se necessário)
+URL_API = "http://localhost:8000/api/telemetria"
+
+# Configurações do Limiar baseadas no código C++ do ESP32
+LIMIAR_FUMACA = 400
+
+def gerar_dados_sensores():
+    """
+    Gera dados simulados para o DHT22 e MQ-2.
+    Garante uma chance matemática exata de 20% de gerar um cenário de risco.
+    """
+    # random.random() gera um número flutuante entre 0.0 e 1.0
+    # Se o número for menor ou igual a 0.20, temos a probabilidade de 20% selecionada
+    e_cenario_de_risco = random.random() <= 0.20
+    
+    if e_cenario_de_risco:
+        # Cenário de Risco (Incêndio detectado na floresta)
+        temperatura = round(random.uniform(38.0, 48.0), 1)  # Altas temperaturas
+        humidade = round(random.uniform(5.0, 15.0), 1)       # Ar extremamente seco
+        nivel_fumaca = random.randint(450, 850)              # Acima do limiar de 400
+        alerta_local = True
+        status_log = "🚨 [RISCO DETECTADO]"
+    else:
+        # Cenário Normal (Condições climáticas estáveis)
+        temperatura = round(random.uniform(22.0, 32.0), 1)  # Temperaturas normais
+        humidade = round(random.uniform(40.0, 70.0), 1)     # Humidade saudável
+        nivel_fumaca = random.randint(120, 320)              # Abaixo do limiar de 400
+        alerta_local = False
+        status_log = "🟢 [NORMAL]"
+
+    # Monta o payload JSON idêntico ao que o ESP32 real/Wokwi envia
+    payload = {
+        "temperatura": temperatura,
+        "humidade": humidade,
+        "nivel_fumaca": nivel_fumaca,
+        "alerta_local": alerta_local
+    }
+    
+    return payload, status_log
+
+def rodar_simulador():
+    print("==========================================================")
+    print("🛰️  SatGuard-Edge — Script de Simulação de Solo (ESP32)  🛰️")
+    print("Frequência de atualização: 1 em 1 minuto (60 segundos)")
+    print("Probabilidade de Risco configurada: 20%")
+    print("==========================================================")
+    
+    while True:
+        # 1. Gera os dados na borda simulada
+        dados, status = gerar_dados_sensores()
+        timestamp = datetime.now().strftime("%H:%M:%S")
+        
+        print(f"\n[{timestamp}] Gerando dados de telemetria... Tipo: {status}")
+        print(f"-> Temp: {dados['temperatura']}°C | Hum: {dados['humidade']}% | Fumaça: {dados['nivel_fumaca']}")
+            
+        # 2. Aguarda exatamente 1 minuto (60 segundos) antes da próxima leitura
+        print("⏱️  Aguardando 60 segundos para a próxima varredura de solo...")
+        time.sleep(60)
+
+if __name__ == "__main__":
+    rodar_simulador()
