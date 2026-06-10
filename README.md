@@ -27,9 +27,9 @@ O projeto materializa conceitos avançados ministrados ao longo do ano letivo:
 ---
 
 ## 👥 Integrantes do Grupo (Turma 2TIAOA - 2026)
-* **Davi Santos Ferreira** — *Tech Lead & Engenheiro de IA (Visão Computacional e RAG)*
-* **Lais Kurahashi** — *Engenheira de IoT & Desenvolvedora Frontend (Dashboard)*
-* **Lucas Martinelli** — *Engenheiro de Automação & Documentação Técnica*
+* **Davi Santos Ferreira** 
+* **Lais Kurahashi** 
+* **Lucas Martinelli**
 
 > ⚠️ **Nota de Transparência sobre Versionamento:** Devido a problemas persistentes de autenticação com as credenciais locais do Git e chaves SSH em sua máquina de trabalho, o integrante **Lucas Martinelli** não conseguiu realizar commits diretamente a partir de seu perfil do GitHub neste repositório. Toda a sua contribuição técnica em código (Scraper Web) e documentação foi integrada e buildada no repositório através de pareamento (Pair Programming) com os demais membros da equipe.
 
